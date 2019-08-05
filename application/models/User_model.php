@@ -261,8 +261,8 @@ class User_model extends CI_Model
         $this->db->join('tbl_users as Users','Users.userId = TaskTbl.createdBy');
         $this->db->join('tbl_roles as Roles','Roles.roleId = Users.roleId');
         $this->db->join('tbl_tasks_situations as Situations','Situations.statusId = TaskTbl.statusId');
-        $this->db->join('tbl_tasks_prioritys as Prioritys','Prioritys.priorityId = TaskTbl.priorityId');
-        $this->db->order_by('TaskTbl.statusId ASC, TaskTbl.priorityId');
+        $this->db->join('tbl_tasks_size as Sizes','Sizes.ID = TaskTbl.sizeId');
+        $this->db->order_by('TaskTbl.statusId ASC, TaskTbl.createdDtm');
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
@@ -275,6 +275,18 @@ class User_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_tasks_prioritys');
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    /**
+     * This function is used to get task prioritys
+     */
+    function getTasksSize()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_tasks_size');
+        $this->db->order_by("code", "asc");
         $query = $this->db->get();
         
         return $query->result();
