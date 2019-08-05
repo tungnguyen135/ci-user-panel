@@ -315,11 +315,11 @@ class Admin extends BaseController
             }
             $data['userRecords'] = $this->user_model->logHistoryBackup();
 
-            $process = 'Yedek Log Görüntüleme';
+            $process = 'Backup Log Display';
             $processFunction = 'Admin/logHistoryBackup';
             $this->logrecord($process,$processFunction);
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Yedek Giriş Geçmişi';
+            $this->global['pageTitle'] = 'BSEU : User Backup Login History';
             
             $this->loadViews("logHistoryBackup", $this->global, $data, NULL);
     }
@@ -333,12 +333,12 @@ class Admin extends BaseController
 
         if($backup)
         {
-            $this->session->set_flashdata('success', 'Tablo temizleme işlemi başarılı');
+            $this->session->set_flashdata('success', 'Table cleanup successful');
             redirect('log-history-backup');
         }
         else
         {
-            $this->session->set_flashdata('error', 'Tablo temizleme işlemi başarısız');
+            $this->session->set_flashdata('error', 'Table cleanup fails');
             redirect('log-history-backup');
         }
     }

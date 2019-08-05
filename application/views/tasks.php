@@ -45,16 +45,17 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Task Title</th>
-                    <th>Explanation</th>
-                    <th>Availability</th>
-                    <th>Priority</th>
-                    <th>Creator User</th>
-                    <th>Creator User Authorization</th>
-                    <th>Creation Date</th>
-                    <th>End Date</th>
-                    <th>Transactions</th>
-                    <th>End Task</th>
+                    <th>CreatedAt</th>
+                    <th>Status</th>
+                    <th>Link</th>
+                    <th>Code</th>
+                    <th>Store</th>
+                    <th>Finding At</th>
+                    <th>Email</th>
+                    <th></th>
+                    <th></th>
+                      
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -69,10 +70,7 @@
                         <?php echo $record->id ?>
                       </td>
                       <td>
-                        <?php echo $record->title ?>
-                      </td>
-                      <td>
-                        <?php echo $record->comment ?>
+                        <?php echo $record->createdDtm ?>
                       </td>
                       <td>
                         <div class="label label-<?php
@@ -80,34 +78,28 @@
                         echo 'danger';
                         else if ($record->statusId == '2')
                         echo 'success';
+                        else if ($record->statusId == '3')
+                        echo 'default';
                         ?>">
                           <?php echo $record->status ?>
                         </div>
                       </td>
-
                       <td>
-                        <div class="label label-<?php
-                        if ($record->priorityId == '1')
-                        echo 'danger';
-                        else if ($record->priorityId == '2')
-                        echo 'warning';
-                        else if ($record->priorityId == '3')
-                        echo 'info'
-                        ?>">
-                          <?php echo $record->priority ?>
-                        </div>
+                            <a href="<?php echo $record->permalink ?>" target="_blank">
+                              <?php echo $record->permalink ?>
+                            </a>
                       </td>
                       <td>
-                        <?php echo $record->name ?>
+                        <?php echo $record->code ?>
                       </td>
                       <td>
-                        <?php echo $record->role ?>
+                        <?php echo $record->store ?>
                       </td>
                       <td>
-                        <?php echo $record->createdDtm ?>
+                        <?php echo $record->findingAt ?>
                       </td>
                       <td>
-                        <?php echo $record->endDtm ?>
+                        <?php echo $record->emailTo ?>
                       </td>
                       <td class="text-center">
                         <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOldTask/'.$record->id; ?>" title="Edit">

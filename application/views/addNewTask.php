@@ -23,23 +23,41 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="fname">Task Title</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('fname'); ?>" id="fname" name="fname">
+                                        <label for="permalink">Product link</label>
+                                        <input type="text" class="form-control required" value="<?php echo set_value('permalink'); ?>" id="permalink" name="permalink">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="role">Priority</label>
-                                        <select class="form-control required" id="priority" name="priority">
-                                            <option value="0">Select priority</option>
+                                        <label for="code">Code</label>
+                                        <input type="text" class="form-control" value="<?php echo set_value('code'); ?>" id="code" name="code">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="store">Store</label>
+                                        <input type="text" class="form-control" value="<?php echo set_value('store'); ?>" id="store" name="store">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="emailTo">Email to</label>
+                                        <input type="text" class="form-control required" value="<?php echo set_value('emailTo'); ?>" id="emailTo" name="emailTo">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="role">Size</label>
+                                        <select class="form-control required" id="size" name="size">
+                                            <option value="0">Select size</option>
                                             <?php
-                                            if(!empty($tasks_prioritys))
+                                            if(!empty($tasks_size))
                                             {
-                                                foreach ($tasks_prioritys as $rl)
+                                                foreach ($tasks_size as $rl)
                                                 {
                                                     ?>
-                                                <option value="<?php echo $rl->priorityId ?>" <?php if($rl->priorityId == set_value('priority')) {echo "selected=selected";} ?>>
-                                                    <?php echo $rl->priority ?>
+                                                <option value="<?php echo $rl->ID ?>" <?php if($rl->ID == set_value('Id')) {echo "selected=selected";} ?>>
+                                                    <?php echo $rl->Code ?>
                                                 </option>
                                                 <?php
                                                 }
@@ -47,19 +65,6 @@
                                             ?>
                                         </select>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="comment">Task Description</label>
-                                        <textarea class="form-control" id="comment" name="comment" rows="4">
-                                            <?php echo set_value('comment'); ?>
-                                        </textarea>
-                                    </div>
-                                </div>
-
-                                <div class="row">
                                 </div>
                             </div>
                             <!-- /.box-body -->
