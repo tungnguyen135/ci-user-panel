@@ -31,7 +31,7 @@
                                     <div class="form-group">
                                         <label for="role">Priority</label>
                                         <select class="form-control required" id="priority" name="priority">
-                                            <option value="0">Öncelik seçiniz</option>
+                                            <option value="0">Select priority</option>
                                             <?php
                                             if(!empty($tasks_prioritys))
                                             {
