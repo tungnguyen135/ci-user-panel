@@ -1,10 +1,10 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>BSEU</b> Yönetim Paneli | V1.0
+        <b>BSEU</b> Panel Management | V1.0
     </div>
     <strong>Copyright &copy; 2018-2019
         <a href="<?php echo base_url(); ?>">BSEU</a>
-    </strong> Tüm hakları saklıdır.
+    </strong> All Rights Reserved.
 </footer>
 
 <!-- jQuery UI 1.11.2 -->
@@ -47,14 +47,14 @@
             //Dil
             language: {
                 select: {
-                    rows: "%d satır seçildi."
+                    rows: "%d row selected."
                 },
 
-                url: "http://cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+                url: "http://cdn.datatables.net/plug-ins/1.10.12/i18n/English.json"
             },
             buttons: [{
                     extend: "print",
-                    text: "Yazdır",
+                    text: "Print",
                     exportOptions: {
                         orthogonal: 'export',
                         columns: ':visible'

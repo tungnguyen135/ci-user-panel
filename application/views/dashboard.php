@@ -2,7 +2,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Yönetim Paneli
+    Panel Management
     </h1>
   </section>
 
@@ -15,12 +15,12 @@
             <h3>
               <?php if(isset($tasksCount)) { echo $tasksCount; } else { echo '0'; } ?>
             </h3>
-            <p>Görevler</p>
+            <p>Tasks</p>
           </div>
           <div class="icon">
             <i class="fa fa-tasks"></i>
           </div>
-          <a href="<?php echo base_url(); ?><?php  if($role != ROLE_EMPLOYEE) {echo 'tasks';}else{echo 'etasks';} ?>" class="small-box-footer">Tümünü gör
+          <a href="<?php echo base_url(); ?><?php  if($role != ROLE_EMPLOYEE) {echo 'tasks';}else{echo 'etasks';} ?>" class="small-box-footer">See all
             <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -33,17 +33,18 @@
             <h3>
               <?php if(isset($finishedTasksCount)) { echo $finishedTasksCount; } else { echo '0'; } ?>
             </h3>
-            <p>Bitirilmiş Görevler</p>
+            <p>Completed Tasks</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="<?php echo base_url(); ?><?php  if($role != ROLE_EMPLOYEE) {echo 'tasks';}else{echo 'etasks';} ?>" class="small-box-footer">Daha fazla bilgi
+          <a href="<?php echo base_url(); ?><?php  if($role != ROLE_EMPLOYEE) {echo 'tasks';}else{echo 'etasks';} ?>" class="small-box-footer">More information
             <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div>
       <!-- ./col -->
+      <?php  if($role != ROLE_EMPLOYEE) { ?>
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div class="small-box bg-yellow">
@@ -51,12 +52,12 @@
             <h3>
               <?php if(isset($usersCount)) { echo $usersCount; } else { echo '0'; } ?>
             </h3>
-            <p>Kullanıcı</p>
+            <p>User</p>
           </div>
           <div class="icon">
             <i class="ion ion-person"></i>
           </div>
-          <a href="<?php echo base_url(); ?>userListing" class="small-box-footer">Daha fazla bilgi
+          <a href="<?php echo base_url(); ?>userListing" class="small-box-footer">More information
             <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
@@ -74,11 +75,12 @@
           <div class="icon">
             <i class="fa fa-archive"></i>
           </div>
-          <a href="<?php echo base_url(); ?>log-history" class="small-box-footer">Daha fazla bilgi
+          <a href="<?php echo base_url(); ?>log-history" class="small-box-footer">More information
             <i class="fa fa-arrow-circle-right"></i>
           </a>
         </div>
       </div>
+      <?php }?>
       <!-- ./col -->
     </div>
   </section>

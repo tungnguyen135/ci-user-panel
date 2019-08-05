@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>BSEU | Yönetim Paneli Giriş</title>
+  <title>BSEU | Panel managememnt</title>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
@@ -23,11 +23,11 @@
     <div class="login-logo">
       <a href="#">
         <b>BSEU</b>
-        <br>Yönetim Paneli</a>
+        <br>Panel Managment</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Giriş Yap</p>
+      <p class="login-box-msg">Sign in</p>
       <?php $this->load->helper('form'); ?>
       <div class="row">
         <div class="col-md-12">
@@ -61,7 +61,7 @@
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Şifre" name="password" required />
+            <input type="password" class="form-control" placeholder="Password" name="password" required />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -74,13 +74,13 @@
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-              <input type="submit" class="btn btn-primary btn-block btn-flat" value="Giriş Yap" />
+              <input type="submit" class="btn btn-primary btn-block btn-flat" value="Sign in" />
             </div>
             <!-- /.col -->
           </div>
         </form>
 
-        <a href="<?php echo base_url() ?>forgotPassword">Şifremi Unuttum</a>
+        <a href="<?php echo base_url() ?>forgotPassword">Forgot Password</a>
         <br>
 
     </div>

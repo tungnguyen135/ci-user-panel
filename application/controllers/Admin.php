@@ -53,11 +53,11 @@ class Admin extends BaseController
             
             $data['userRecords'] = $this->user_model->userListing($searchText, $returns["page"], $returns["segment"]);
             
-            $process = 'Kullanıcı Listeleme';
+            $process = 'User Listing';
             $processFunction = 'Admin/userListing';
             $this->logrecord($process,$processFunction);
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Listesi';
+            $this->global['pageTitle'] = 'BSEU : User List';
             
             $this->loadViews("users", $this->global, $data, NULL);
     }
@@ -69,7 +69,7 @@ class Admin extends BaseController
     {
             $data['roles'] = $this->user_model->getUserRoles();
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Ekle';
+            $this->global['pageTitle'] = 'BSEU : Add User';
 
             $this->loadViews("addNew", $this->global, $data, NULL);
     }
@@ -108,15 +108,15 @@ class Admin extends BaseController
                 
                 if($result > 0)
                 {
-                    $process = 'Kullanıcı Ekleme';
+                    $process = 'Adding Users';
                     $processFunction = 'Admin/addNewUser';
                     $this->logrecord($process,$processFunction);
 
-                    $this->session->set_flashdata('success', 'Kullanıcı başarıyla oluşturuldu');
+                    $this->session->set_flashdata('success', 'User created successfully');
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'Kullanıcı oluşturma başarısız');
+                    $this->session->set_flashdata('error', 'User creation failed');
                 }
                 
                 redirect('userListing');
@@ -137,7 +137,7 @@ class Admin extends BaseController
             $data['roles'] = $this->user_model->getUserRoles();
             $data['userInfo'] = $this->user_model->getUserInfo($userId);
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Düzenle';
+            $this->global['pageTitle'] = 'BSEU : Edit User';
             
             $this->loadViews("editOld", $this->global, $data, NULL);
     }
@@ -189,15 +189,15 @@ class Admin extends BaseController
                 
                 if($result == true)
                 {
-                    $process = 'Kullanıcı Güncelleme';
+                    $process = 'User Update';
                     $processFunction = 'Admin/editUser';
                     $this->logrecord($process,$processFunction);
 
-                    $this->session->set_flashdata('success', 'Kullanıcı başarıyla güncellendi');
+                    $this->session->set_flashdata('success', 'User successfully updated');
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'Kullanıcı güncelleme başarısız');
+                    $this->session->set_flashdata('error', 'User update failed');
                 }
                 
                 redirect('userListing');
@@ -218,7 +218,7 @@ class Admin extends BaseController
             if ($result > 0) {
                  echo(json_encode(array('status'=>TRUE)));
 
-                 $process = 'Kullanıcı Silme';
+                 $process = 'User Deletion';
                  $processFunction = 'Admin/deleteUser';
                  $this->logrecord($process,$processFunction);
 
@@ -241,11 +241,11 @@ class Admin extends BaseController
             }
             $data['userRecords'] = $this->user_model->logHistory($userId);
 
-            $process = 'Log Görüntüleme';
+            $process = 'Log visualization';
             $processFunction = 'Admin/logHistory';
             $this->logrecord($process,$processFunction);
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Giriş Geçmişi';
+            $this->global['pageTitle'] = 'BSEU : User Login History';
             
             $this->loadViews("logHistory", $this->global, $data, NULL);
     }
@@ -260,11 +260,11 @@ class Admin extends BaseController
             $data["userInfo"] = $this->user_model->getUserInfoById($userId);
             $data['userRecords'] = $this->user_model->logHistory($userId);
             
-            $process = 'Tekil Log Görüntüleme';
+            $process = 'View Single Log';
             $processFunction = 'Admin/logHistorysingle';
             $this->logrecord($process,$processFunction);
 
-            $this->global['pageTitle'] = 'BSEU : Kullanıcı Giriş Geçmişi';
+            $this->global['pageTitle'] = 'BSEU : User Login History';
             
             $this->loadViews("logHistorysingle", $this->global, $data, NULL);      
     }
@@ -440,12 +440,12 @@ class Admin extends BaseController
                 }
             if (empty($lines) || !isset($lines))
             {
-                $this->session->set_flashdata('error', 'Yedek yükleme işlemi başarısız');
+                $this->session->set_flashdata('error', 'Backup installation failed');
                 redirect('log-history-upload');
             }
             else
             {
-                $this->session->set_flashdata('success', 'Yedek yükleme işlemi başarılı');
+                $this->session->set_flashdata('success', 'Backup installation successful');
                 redirect('log-history-upload');
             }
     }

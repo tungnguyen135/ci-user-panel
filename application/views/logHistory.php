@@ -2,8 +2,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <i class="fa fa-users"></i> Log Geçmişi
-      <small>Kullanıcıların Log Geçmişi</small>
+      <i class="fa fa-users"></i> Log History
+      <small>Users' Log History</small>
     </h1>
   </section>
   <section class="content">
@@ -11,7 +11,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title"> Log tablosu boyutunuz:
+            <h3 class="box-title"> Your log table size:
               <?php
                   if(isset($dbinfo->total_size))
                   {
@@ -25,7 +25,7 @@
                   ?>
                 MB</h3>
             <div class="pull-right">
-              <a class="btn btn-danger" href="<?php echo base_url(); ?>backupLogTable">Yedekle ve Sil</a>
+              <a class="btn btn-danger" href="<?php echo base_url(); ?>backupLogTable">Backup and Delete</a>
             </div>
             <div class="box-tools">
             </div>
@@ -57,17 +57,17 @@
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Kullanıcı Adı</th>
-                      <th>İşlem</th>
-                      <th>İşlem Fonksiyon</th>
-                      <th>Kullanıcı Rol ID</th>
-                      <th>Kullanıcı Rol</th>
-                      <th>Kullanıcı IP</th>
-                      <th>Tarayıcı</th>
-                      <th>Tarayıcı Tüm Bilgiler</th>
-                      <th>Platform</th>
-                      <th>Tarih ve Zaman</th>
+                      <Th> ID </th>
+                      <th> Username</th>
+                      <Th> Transaction </th>
+                      <th> Transaction Function </th>
+                      <th> User Role ID </th>
+                      <th> User Role </th>
+                      <th> User IP </th>
+                      <Th> Browser </th>
+                      <th> Browser All Information </th>
+                      <Th> Platform </th>
+                      <th> Date and Time </th>
                     </tr>
                   </thead>
                   <tbody>

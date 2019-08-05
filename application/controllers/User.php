@@ -26,7 +26,7 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'BSEU : Anasayfa';
+        $this->global['pageTitle'] = 'BSEU : Home page';
 
         $data['tasksCount'] = $this->user_model->tasksCount();
         $data['finishedTasksCount'] = $this->user_model->finishedTasksCount();
@@ -35,10 +35,10 @@ class User extends BaseController
 
         if ($this->getUserStatus() == TRUE)
         {
-            $this->session->set_flashdata('error', 'Lütfen güvenliğiniz için öncelikle şifrenizi değiştiriniz.');
+            $this->session->set_flashdata('error', 'Please change your password first for your security.');
             redirect('loadChangePass');
         }
-
+        
         $this->loadViews("dashboard", $this->global, $data , NULL);
     }
 
@@ -65,7 +65,7 @@ class User extends BaseController
      */
     function loadUserEdit()
     {
-        $this->global['pageTitle'] = 'BSEU : Hesap Ayarları';
+        $this->global['pageTitle'] = 'BSEU : Account Settings';
         
         $data['userInfo'] = $this->user_model->getUserInfo($this->vendorId);
 
@@ -113,7 +113,7 @@ class User extends BaseController
             
                 if(empty($resultPas))
                 {
-                $this->session->set_flashdata('nomatch', 'Eski şifreniz doğru değil');
+                $this->session->set_flashdata('nomatch', 'Your old password is not correct');
                 redirect('userEdit');
                 }
                 else
@@ -128,15 +128,15 @@ class User extends BaseController
             
             if($result == true)
             {
-                $process = 'Hesap Ayarları Güncelleme';
+                $process = 'Account Settings Update';
                 $processFunction = 'User/updateUser';
                 $this->logrecord($process,$processFunction);
 
-                $this->session->set_flashdata('success', 'Hesap Ayarlarınız başarıyla güncellendi');
+                $this->session->set_flashdata('success', 'Your Account Settings were updated successfully');
             }
             else
             {
-                $this->session->set_flashdata('error', 'Hesap Ayarlarını güncelleme başarısız');
+                $this->session->set_flashdata('error', 'Failed to update Account Settings');
             }
             
             redirect('userEdit');
@@ -150,7 +150,7 @@ class User extends BaseController
      */
     function loadChangePass()
     {
-        $this->global['pageTitle'] = 'BSEU : Şifre Değiştir';
+        $this->global['pageTitle'] = 'BSEU : Change Password';
         
         $this->loadViews("changePassword", $this->global, NULL, NULL);
     }
@@ -180,7 +180,7 @@ class User extends BaseController
             
             if(empty($resultPas))
             {
-                $this->session->set_flashdata('nomatch', 'Eski şifreniz doğru değil');
+                $this->session->set_flashdata('nomatch', 'Your old password is not correct');
                 redirect('loadChangePass');
             }
             else
@@ -196,10 +196,10 @@ class User extends BaseController
                     $processFunction = 'User/changePassword';
                     $this->logrecord($process,$processFunction);
 
-                     $this->session->set_flashdata('success', 'Şifre değiştirme başarılı');
+                     $this->session->set_flashdata('success', 'Password change successful');
                      }
                 else {
-                     $this->session->set_flashdata('error', 'Şifre değiştirme başarısız'); 
+                     $this->session->set_flashdata('error', 'Password change failed'); 
                     }
                 
                 redirect('loadChangePass');
@@ -212,7 +212,7 @@ class User extends BaseController
      */
     function pageNotFound()
     {
-        $this->global['pageTitle'] = 'BSEU : 404 - Sayfa Bulunamadı';
+        $this->global['pageTitle'] = 'BSEU : 404 - Page Not Found';
         
         $this->loadViews("404", $this->global, NULL, NULL);
     }
@@ -230,7 +230,7 @@ class User extends BaseController
                  $process = 'Görev Bitirme';
                  $processFunction = 'User/endTask';
                  $this->logrecord($process,$processFunction);
-                 $this->session->set_flashdata('success', 'Görev başarıyla tamamlandı');
+                 $this->session->set_flashdata('success', 'Task completed successfully');
                  if ($this->role != ROLE_EMPLOYEE){
                     redirect('tasks');
                  }
@@ -239,7 +239,7 @@ class User extends BaseController
                  }
                 }
             else {
-                $this->session->set_flashdata('error', 'Görev tamamlama başarısız');
+                $this->session->set_flashdata('error', 'Task completion failed');
                 if ($this->role != ROLE_EMPLOYEE){
                     redirect('tasks');
                  }
@@ -256,11 +256,11 @@ class User extends BaseController
     {
             $data['taskRecords'] = $this->user_model->getTasks();
 
-            $process = 'Kullanıcı Tüm görevler';
+            $process = 'User All tasks';
             $processFunction = 'User/etasks';
             $this->logrecord($process,$processFunction);
 
-            $this->global['pageTitle'] = 'BSEU : Tüm Görevler';
+            $this->global['pageTitle'] = 'BSEU : All Taskss';
             
             $this->loadViews("etasks", $this->global, $data, NULL);
     }

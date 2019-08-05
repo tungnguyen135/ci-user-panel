@@ -52,7 +52,7 @@ class Login extends BaseController
      */
     public function noaccess() {
         
-        $this->global['pageTitle'] = 'BSEU : Erişim Reddedildi';
+        $this->global['pageTitle'] = 'BSEU : Access Denied';
         $this->datas();
 
         $this->load->view ( 'includes/header', $this->global );
@@ -128,7 +128,7 @@ class Login extends BaseController
             }
             else
             {
-                $this->session->set_flashdata('error', 'Email adresi veya şifre yanlış');
+                $this->session->set_flashdata('error', 'Email address or password is incorrect');
                 
                 redirect('/login');
             }
@@ -192,33 +192,33 @@ class Login extends BaseController
                     if(!empty($userInfo)){
                         $data1["name"] = $userInfo[0]->name;
                         $data1["email"] = $userInfo[0]->email;
-                        $data1["message"] = "Şifrenizi Sıfırlayın";
+                        $data1["message"] = "Reset Your Password";
                     }
 
                     $sendStatus = resetPasswordEmail($data1);
 
-                    $process = 'Şifre Sıfırlama İsteği';
+                    $process = 'Password Reset Request';
                     $processFunction = 'Login/resetPasswordUser';
                     $this->logrecord($process,$processFunction);
 
                     if($sendStatus){
                         $status = "send";
-                        setFlashData($status, "Şifre sıfırlama linkiniz başarıyla gönderildi, mailinizi kontrol ediniz.");
+                        setFlashData($status, "Your password reset link has been sent successfully, please check your mail.");
                     } else {
                         $status = "notsend";
-                        setFlashData($status, "Email gönderme işlemi başarısız, tekrar deneyin.");
+                        setFlashData($status, "Email sending failed, try again.");
                     }
                 }
                 else
                 {
                     $status = 'unable';
-                    setFlashData($status, "Bilgilerinizi gönderirken bir hata oluştu, tekrar deneyin.");
+                    setFlashData($status, "There was an error sending your information, try again.");
                 }
             }
             else
             {
                 $status = 'invalid';
-                setFlashData($status, "Email adresiniz sistemde kayıtlı değil.");
+                setFlashData($status, "Your email address is not registered in the system.");
             }
             redirect('/forgotPassword');
         }
@@ -281,17 +281,17 @@ class Login extends BaseController
             {               
                 $this->login_model->createPasswordUser($email, $password);
                 
-                $process = 'Şifre Sıfırlama';
+                $process = 'Password Reset';
                 $processFunction = 'Login/createPasswordUser';
                 $this->logrecord($process,$processFunction);
 
                 $status = 'success';
-                $message = 'Şifre başarıyla değiştirildi';
+                $message = 'Password changed successfully';
             }
             else
             {
                 $status = 'error';
-                $message = 'Şifre değiştirilemedi';
+                $message = 'Failed to change password';
             }
             
             setFlashData($status, $message);

@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Şifre Değiştir
-            <small>Yeni bir şifre belirleyin</small>
+            Change Password
+            <small>Set a new password</small>
         </h1>
     </section>
     <section class="content">
@@ -12,7 +12,7 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Bilgilerinizi Giriniz</h3>
+                        <h3 class="box-title">Enter your information</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -21,8 +21,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputPassword1">Eski Şifreniz</label>
-                                        <input type="password" class="form-control" id="inputOldPassword" placeholder="Eski Şifre" name="oldPassword" maxlength="20"
+                                        <label for="inputPassword1">Old Password</label>
+                                        <input type="password" class="form-control" id="inputOldPassword" placeholder="Old password" name="oldPassword" maxlength="20"
                                             required>
                                     </div>
                                 </div>
@@ -31,8 +31,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputPassword1">Yeni Şifreniz</label>
-                                        <input type="password" class="form-control" id="inputPassword1" placeholder="Yeni Şifre" name="newPassword" maxlength="20"
+                                        <label for="inputPassword1">New Password</label>
+                                        <input type="password" class="form-control" id="inputPassword1" placeholder="New password" name="newPassword" maxlength="20"
                                             required>
                                     </div>
                                 </div>
@@ -40,8 +40,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputPassword2">Yeni şifrenizi doğrulayın</label>
-                                        <input type="password" class="form-control" id="inputPassword2" placeholder="Yeni şifrenizi doğrulayın" name="cNewPassword"
+                                        <label for="inputPassword2">Verify your new password</label>
+                                        <input type="password" class="form-control" id="inputPassword2" placeholder="Verify your new password" name="cNewPassword"
                                             maxlength="20" required>
                                     </div>
                                 </div>
@@ -50,8 +50,8 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Gönder" />
-                            <input type="reset" class="btn btn-default" value="Sıfırla" />
+                            <input type="submit" class="btn btn-primary" value="Submit" />
+                            <input type="reset" class="btn btn-default" value="Reset" />
                         </div>
                     </form>
                 </div>

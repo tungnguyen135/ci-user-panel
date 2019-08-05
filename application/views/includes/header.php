@@ -67,9 +67,9 @@
                 <i class="fa fa-history"></i>
               </a>
               <ul class="dropdown-menu">
-                <li class="header"> Son Giriş :
+                <li class="header"> Last Login :
                   <i class="fa fa-clock-o"></i>
-                  <?= empty($last_login) ? "İlk Giriş" : $last_login; ?>
+                  <?= empty($last_login) ? "First Login" : $last_login; ?>
                 </li>
               </ul>
             </li>
@@ -96,11 +96,11 @@
                 <li class="user-footer">
                   <div class="pull-left">
                     <a href="<?php echo base_url(); ?>userEdit" class="btn btn-default btn-flat">
-                      <i class="fa fa-key"></i> Hesap Ayarları </a>
+                      <i class="fa fa-key"></i> Account settings </a>
                   </div>
                   <div class="pull-right">
                     <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat">
-                      <i class="fa fa-sign-out"></i> Çıkış Yap</a>
+                      <i class="fa fa-sign-out"></i> Log out</a>
                   </div>
                 </li>
               </ul>
@@ -120,7 +120,7 @@
           <li class="treeview">
             <a href="<?php echo base_url(); ?>dashboard">
               <i class="fa fa-dashboard"></i>
-              <span>Anasayfa</span>
+              <span>Home page</span>
               </i>
             </a>
           </li>
@@ -132,13 +132,13 @@
             <li class="treeview">
               <a href="<?php echo base_url(); ?>tasks">
                 <i class="fa fa-tasks"></i>
-                <span>Görevler</span>
+                <span>Task</span>
               </a>
             </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>addNewTask">
                 <i class="fa fa-plus-circle"></i>
-                <span>Görev Ekle</span>
+                <span>Add Task</span>
               </a>
             </li>
             <?php
@@ -149,31 +149,31 @@
               <li class="treeview">
                 <a href="<?php echo base_url(); ?>userListing">
                   <i class="fa fa-users"></i>
-                  <span>Kullanıcılar</span>
+                  <span>User</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="<?php echo base_url(); ?>addNew">
                   <i class="fa fa-plus-circle"></i>
-                  <span>Kullanıcı Ekle</span>
+                  <span>Add User</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="<?php echo base_url(); ?>log-history">
                   <i class="fa fa-archive"></i>
-                  <span>Log Kayıtları</span>
+                  <span>Log records</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="<?php echo base_url(); ?>log-history-upload">
                   <i class="fa fa-upload"></i>
-                  <span>Yedek Yükle</span>
+                  <span>Upload backup</span>
                 </a>
               </li>
               <li class="treeview">
                 <a href="<?php echo base_url(); ?>log-history-backup">
                   <i class="fa fa-archive"></i>
-                  <span>Log Kayıtları Yedek</span>
+                  <span>Log Backup Records</span>
                 </a>
               </li>
               <?php
@@ -184,7 +184,7 @@
                 <li class="treeview">
                   <a href="<?php echo base_url(); ?>etasks">
                     <i class="fa fa-tasks"></i>
-                    <span>Görevler</span>
+                    <span>Tasks</span>
                   </a>
                   <?php
             }

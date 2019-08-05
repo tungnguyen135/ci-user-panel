@@ -2,7 +2,7 @@
     <section class="content-header">
         <h1>
             404
-            <small>Aradığınız sayfa maalasef bulunamadı.</small>
+            <small>The page you were looking for could not be found.</small>
         </h1>
     </section>
     <section class="content">

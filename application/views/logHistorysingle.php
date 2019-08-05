@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-users"></i> Log Geçmişi
-            <small>Kullanıcıların Log Geçmişi</small>
+            <i class = "fa fa-users"> </i> Log History
+            <small> Users' Log History </small>
         </h1>
     </section>
     <section class="content">
@@ -44,17 +44,17 @@
                                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Kullanıcı Adı</th>
-                                            <th>İşlem</th>
-                                            <th>İşlem Fonksiyon</th>
-                                            <th>Kullanıcı Rol ID</th>
-                                            <th>Kullanıcı Rol</th>
-                                            <th>Kullanıcı IP</th>
-                                            <th>Tarayıcı</th>
-                                            <th>Tarayıcı Tüm Bilgiler</th>
-                                            <th>Platform</th>
-                                            <th>Tarih ve Zaman</th>
+                                            <th> ID </th>
+                                            <th> Username </th>
+                                            <Th> Transaction </th>
+                                            <th> Transaction Function </th>
+                                            <th> User Role ID </th>
+                                            <th> User Role </th>
+                                            <th> User IP </th>
+                                            <Th> Browser </th>
+                                            <th> Browser All Information </th>
+                                            <Th> Platform </th>
+                                            <th> Date and Time </th>
                                         </tr>
                                     </thead>
                                     <tbody>

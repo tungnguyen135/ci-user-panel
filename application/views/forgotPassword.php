@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BSEU | Yönetim Paneli Giriş</title>
+    <title>BSEU | Administration Panel Introduction</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
@@ -23,11 +23,11 @@
         <div class="login-logo">
             <a href="#">
                 <b>BSEU</b>
-                <br>Yönetim Paneli</a>
+                <br>Panel Management</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            <p class="login-box-msg">Şifremi Unuttum</p>
+            <p class="login-box-msg">I forgot my password</p>
             <?php $this->load->helper('form'); ?>
             <div class="row">
                 <div class="col-md-12">
@@ -97,12 +97,12 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-4">
-                            <input type="submit" class="btn btn-primary btn-block btn-flat" value="Gönder" />
+                            <input type="submit" class="btn btn-primary btn-block btn-flat" value="Submit" />
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
-                <a href="<?php echo base_url() ?>">Giriş Yap</a>
+                <a href="<?php echo base_url() ?>">Sign in</a>
                 <br>
         </div>
         <!-- /.login-box-body -->
